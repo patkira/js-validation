@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="create-article-form" class="js-article-validate" method="POST" novalidate>
+        <div class="form-group">
+            <label for="article-title">Title</label>
+            <input class="form-control" type="text" name="title" id="article-title">
+            <div class="messages"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="article-summary">Summary</label>
+            <textarea class="form-control" name="summary" id="article-summary"></textarea>
+            <div class="messages"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="article-description">Description</label>
+            <textarea class="form-control" name="description" id="article-description" data-ckeditor></textarea>
+            <div class="messages"></div>
+        </div>
+
+        <fieldset>
+            <div class="form-group">
+                <label for="article-publish">Publish date</label>
+                <input class="form-control" type="datetime-local" name="publish_timestamp" id="article-publish">
+                <div class="messages"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="article-expiry">Expiry date</label>
+                <input class="form-control" type="datetime-local" name="expiry_timestamp" id="article-expiry">
+                <div class="messages"></div>
+            </div>
+        <fieldset>
+
+        <div class="form-group">
+            <label for="article-priority">Priority</label>
+            <select class="form-control" name="priority" id="article-priority">
+              <option value="normal">normal</option>
+              <option value="high">high</option>
+            </select>
+            <div class="messages"></div>
+        </div>
+
+        <div class="form-group">
+            <label name="category_list">Catgories</label>
+            <select class="form-control" multiple name="category_list[]">
+                <option value="1">sport</option>
+                <option value="2">education</option>
+                <option value="3">other</option>
+                <option value="4">surf life</option>
+                <option value="5">member</option>
+            </select>
+            <div class="messages"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="article-type">Type</label>
+            <select class="form-control" name="type" id="article-type" required>
+              <option value="news">news</option>
+              <option value="event">event</option>
+            </select>
+            <div class="messages"></div>
+        </div>
+
+        <fieldset id="article-event-details" class="invisible">
+          <div class="form-group">
+              <label for="event-location">Event location</label>
+              <input class="form-control" type="text" name="location" id="article-location">
+              <div class="messages"></div>
+          </div>
+
+          <div class="form-group">
+              <label for="event-start">Event start date</label>
+              <input class="form-control" type="datetime-local" name="event_start" id="event-start">
+              <div class="messages"></div>
+          </div>
+
+          <div class="form-group">
+              <label for="event-end">Event end date</label>
+              <input class="form-control" type="datetime-local" name="event_end" id="event-end">
+              <div class="messages"></div>
+          </div>
+        </fieldset>
+
+        <button type="submit">Save article</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.19.3/min/moment.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/validate-article.js"></script>
+  </body>
+</html>
